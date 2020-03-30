@@ -17,18 +17,18 @@
             :alt="title"
             class="sf-header__logo"
           />
-          <h1 v-else class="sf-header__title">{{ title }}</h1>
+          <h1 v-else-if="title" class="sf-header__title">{{ title }}</h1>
         </slot>
-        <nav v-if="!isMobile" class="sf-header__navigation">
+        <nav class="sf-header__navigation desktop-only">
           <!--@slot Use this slot to replace default navigation links -->
           <slot name="navigation" />
         </nav>
         <!--@slot Use this slot to replace default search bar-->
         <slot name="search" v-bind="{ searchPlaceholder }">
           <SfSearchBar
-            v-if="hasMobileSearch || !isMobile"
             :placeholder="searchPlaceholder"
             class="sf-header__search"
+            :class="{ 'desktop-only': !hasMobileSearch }"
           />
         </slot>
         <!--@slot Use this slot to replace default header icons with custom content-->
@@ -36,17 +36,17 @@
           name="header-icons"
           v-bind="{ accountIcon, wishlistIcon, cartIcon }"
         >
-          <div v-if="!isMobile" class="sf-header__icons">
-            <SfCircleIcon
+          <div class="sf-header__icons desktop-only">
+            <SfIcon
               v-for="icon in headerIcons"
               :key="icon.name"
               :icon="icon.icon"
               :has-badge="isCartEmpty && icon.hasBadge === true"
               :badge-label="cartItemsQty"
-              icon-size="1.25rem"
-              class="sf-header__circle-icon"
+              size="xs"
+              class="sf-header__icon"
               :class="{
-                'sf-header__circle-icon--is-active': activeIcon === icon.name
+                'sf-header__icon--is-active': activeIcon === icon.name
               }"
               role="button"
               :aria-label="icon.name"
@@ -59,7 +59,7 @@
         <slot name="language-selector" />
       </header>
     </div>
-    <div v-if="isSticky" class="sf-header__sticky-holder" :style="height" />
+    <div v-show="isSticky" class="sf-header__sticky-holder" :style="height" />
   </div>
 </template>
 <script>
@@ -70,13 +70,13 @@ import {
   unMapMobileObserver
 } from "../../../utilities/mobile-observer";
 Vue.component("SfHeaderNavigationItem", SfHeaderNavigationItem);
-import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
+import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfImage from "../../atoms/SfImage/SfImage.vue";
 import SfSearchBar from "../../molecules/SfSearchBar/SfSearchBar.vue";
 export default {
   name: "SfHeader",
   components: {
-    SfCircleIcon,
+    SfIcon,
     SfImage,
     SfSearchBar
   },
