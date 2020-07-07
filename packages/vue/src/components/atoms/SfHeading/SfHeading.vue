@@ -1,10 +1,10 @@
 <template>
-  <header class="sf-heading">
+  <header class="sf-heading pdbxs--s">
     <!--@slot Heading title. Slot content will replace default <h> tag-->
     <slot name="title" v-bind="{ title }">
       <component
         :is="`h${level}`"
-        class="sf-heading__title"
+        class="sf-heading__title h2"
         :class="level > 1 && `sf-heading__title--h${level}`"
       >
         {{ title }}
@@ -12,7 +12,10 @@
     </slot>
     <!--@slot Heading subtitle. Slot content will replace default <div> tag-->
     <slot name="subtitle" v-bind="{ subtitle }">
-      <div v-if="hasSubtitle" class="sf-heading__subtitle">
+      <div
+        v-if="hasSubtitle"
+        class="sf-heading__subtitle font-secondary txt-sx"
+      >
         {{ subtitle }}
       </div>
     </slot>
