@@ -4,7 +4,7 @@
     <slot name="title" v-bind="{ title }">
       <component
         :is="`h${level}`"
-        class="sf-heading__title h2"
+        class="sf-heading__title h1"
         :class="level > 1 && `sf-heading__title--h${level}`"
       >
         {{ title }}
@@ -14,7 +14,7 @@
     <slot name="subtitle" v-bind="{ subtitle }">
       <div
         v-if="hasSubtitle"
-        class="sf-heading__subtitle font-secondary txt-sx"
+        class="sf-heading__subtitle font-secondary txt-xs"
       >
         {{ subtitle }}
       </div>
