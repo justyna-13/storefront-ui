@@ -14,7 +14,7 @@
     <slot name="subtitle" v-bind="{ subtitle }">
       <div
         v-if="hasSubtitle"
-        class="sf-heading__subtitle font-secondary txt-xs"
+        class="sf-heading__subtitle font-secondary txt-xs pt"
       >
         {{ subtitle }}
       </div>
