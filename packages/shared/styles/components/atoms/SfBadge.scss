@@ -6,11 +6,11 @@
   min-width: var(--badge-min-width);
   height: var(--badge-height);
   min-height: var(--badge-min-height);
-  padding: var(--badge-padding, var(--spacer-xs) var(--spacer-sm));
-  background: var(--badge-background, var(--c-primary));
+  // padding: var(--badge-padding, var(--spacer-xs) var(--spacer-sm));
+  // background: var(--badge-background, var(--c-primary));
   border: var(--badge-border);
   border-radius: var(--badge-border-radius);
-  color: var(--badge-color, var(--c-white));
+  // color: var(--badge-color, var(--c-white));
   text-align: var(--badge-text-align, center);
   @include font(
     --badge-font,

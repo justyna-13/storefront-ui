@@ -1,5 +1,5 @@
 <template>
-  <div class="sf-badge">
+  <div class="sf-badge pdy-xs pdxsm--d bg-color-primary txt-color-base">
     <!--@slot Use this slot to place content inside the badge-->
     <slot />
   </div>
