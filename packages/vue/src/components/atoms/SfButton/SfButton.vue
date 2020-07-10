@@ -2,7 +2,7 @@
   <component
     :is="tag"
     v-focus
-    class="sf-button"
+    class="sf-button pdysm--d pdxlg--d font-secondary txt-base txt-color-base"
     v-bind="$attrs"
     :disabled="disabled"
     :link="link"
