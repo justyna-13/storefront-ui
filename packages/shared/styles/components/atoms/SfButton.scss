@@ -1,5 +1,6 @@
 @import "../../helpers";
 .sf-button {
+  // --link-color: var(--button-color, var(--c-light-variant));
   box-sizing: border-box;
   position: relative;
   width: var(--button-size, var(--button-width));
@@ -7,8 +8,8 @@
   display: var(--button-display, flex);
   align-items: center;
   justify-content: center;
-  padding: var(--button-padding, var(--spacer-sm) calc(var(--spacer-sm) * 2));
-  color: var(--button-color, var(--c-light-variant));
+  // padding: var(--button-padding, var(--spacer-sm) calc(var(--spacer-sm) * 2));
+  // color: var(--button-color, var(--c-light-variant));
   background: var(--button-background, var(--c-primary));
   transition: var(--button-transition);
   text-transform: var(--button-text-transform, uppercase);
@@ -19,9 +20,9 @@
   @include font(
     --button-font,
     var(--font-semibold),
-    var(--font-base),
+    var(),
     1.2,
-    var(--font-family-secondary)
+    var()
   );
   @include border(--button-border, 0, solid, var(--c-primary));
   @include box-shadow(
@@ -42,6 +43,9 @@
         --button-background: #{$variant};
       }
     }
+  }
+  &.sf-link { 
+    --button-width: var(--spacer-3xl);
   }
   &:hover {
     --button-box-shadow-opacity: 0.25;

@@ -29,7 +29,12 @@
       </slot>
       <!-- @slot Custom label markup -->
       <slot name="label" v-bind="{ label, isChecked, disabled }">
-        <div v-if="label" class="sf-checkbox__label">{{ label }}</div>
+        <div
+          v-if="label"
+          class="sf-checkbox__label mrlsm--d font-secondary txt-sm txt-color-dark-secondary"
+        >
+          {{ label }}
+        </div>
       </slot>
     </label>
   </div>

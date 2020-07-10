@@ -6,7 +6,7 @@
         size="1.5rem"
         icon="arrow_left"
         aria-hidden="true"
-        class="sf-arrow__icon"
+        class="sf-arrow__icon text-color-black-primary"
       />
     </slot>
   </SfButton>
